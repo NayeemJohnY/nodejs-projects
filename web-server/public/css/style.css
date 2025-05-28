@@ -1,0 +1,20 @@
+p {
+    color: rgb(12, 15, 233)
+}
+
+img {
+    width: 250px;
+}
+
+input {
+    border-radius: 5px;
+    padding: 5px;
+    border: 2px solid
+}
+
+button {
+    cursor: pointer;
+    background-color: gray;
+    border-radius: 5px;
+    padding: 5px 10px;
+}

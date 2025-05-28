@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read Excel</title>
+    <script src="https://unpkg.com/read-excel-file@5.x/bundle/read-excel-file.min.js"></script>
+</head>
+
+<body>
+    <input type="file" name="file" id="file">
+    <table id="table"></table>
+
+    <script>
+        var input = document.getElementById('file')
+        var table = document.getElementById('table')
+        input.addEventListener('change', function() {
+            readXlsxFile(input.files[0]).then(function(data) {
+                console.log(data);
+                index = 0;
+                data.map((row) => {
+                    generateTableRowAndHeader(index, row)
+                    index++
+                })
+            })
+        })
+
+        function generateTableRowAndHeader(index, data) {
+            if (index == 0) {
+                let thead = table.createTHead()
+                let row = thead.insertRow()
+                for (let key of data) {
+                    let th = document.createElement('th')
+                    let text = document.createTextNode(key)
+                    th.appendChild(text)
+                    row.appendChild(th)
+                }
+            } else {
+                let row = table.insertRow()
+                for (let key of data) {
+                    let cell = row.insertCell(key)
+                    let text = document.createTextNode(key)
+                    cell.appendChild(text)
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

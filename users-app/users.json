@@ -1,0 +1,52 @@
+[{
+        "name": "John",
+        "email": "john@restapi.com",
+        "id": 1,
+        "groups": [{
+                "id": "G01",
+                "name": "Development"
+            },
+            {
+                "id": "G02",
+                "name": "CHNLocation"
+            }
+        ]
+    },
+    {
+        "name": "Ave",
+        "email": "aws@restapi.com",
+        "id": 2,
+        "groups": [{
+            "id": "G03",
+            "name": "QA"
+        }]
+    },
+    {
+        "name": "Smith",
+        "email": "smith@restapi.com",
+        "id": 3,
+        "groups": [{
+            "id": "G02",
+            "name": "CHNLocation"
+        }]
+    },
+    {
+        "name": "Sam",
+        "email": "sam@restapi.com",
+        "id": 4,
+        "groups": [{
+                "id": "G04",
+                "name": "CHNLocation"
+            },
+            {
+                "id": "G05",
+                "name": "HR"
+            }
+        ]
+    },
+    {
+        "name": "Mark",
+        "email": "mark@restapi.com",
+        "id": 5
+    }
+]

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TNTJ Palacode Subscription & Expenditure</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="wrapper" id="login">
+        <header>கணக்கில் நுழைய</header>
+        <form id="loginForm" action="#">
+            <div class="field email">
+                <div class="input-area">
+                    <input type="text" placeholder="மின்னஞ்சல்">
+                    <i class="icon fas fa-envelope"></i>
+                    <i class="error error-icon fas fa-exclamation-circle"></i>
+                </div>
+                <div class="error error-txt">மின்னஞ்சல் தேவை</div>
+            </div>
+            <div class="field password">
+                <div class="input-area">
+                    <input type="password" placeholder="கடவுச்சொல்">
+                    <i class="icon-right fa fa-eye" id="togglePassword"></i>
+                    <i class="icon fas fa-lock"></i>
+                    <i class="error error-icon fas fa-exclamation-circle"></i>
+                </div>
+                <div class="error error-txt">கடவுச்சொல் தேவை</div>
+            </div>
+            <div class="pass-txt"><a href="#" id="forgotPasswordLink">கடவுச்சொல்லை மறந்துவிட்டீர்களா?</a></div>
+            <input type="submit" value="உள்நுழைக">
+        </form>
+        <div class="class-or">அல்லது</div>
+        <div class="pass-txt"></div><a href="#" class="showRegisterForm">புதிய கணக்கை உருவாக்க</a>
+    </div>
+    <div class="wrapper" id="forgotPassword" style="display: none;">
+        <header>கடவுச்சொல்லை மீட்டமைக்க</header>
+        <form id="forgotPasswordForm" action="#">
+            <div class="field email">
+                <div class="input-area">
+                    <input type="text" placeholder="மின்னஞ்சல்">
+                    <i class="icon fas fa-envelope"></i>
+                    <i class="error error-icon fas fa-exclamation-circle"></i>
+                </div>
+                <div class="error error-txt">மின்னஞ்சல் தேவை</div>
+            </div>
+            <input type="submit" value="சமர்ப்பி">
+        </form>
+        <div class="class-or">அல்லது</div>
+        <div class="pass-txt"></div><a href="#" class="showRegisterForm">புதிய கணக்கை உருவாக்க</a>
+        <div class="class-or">அல்லது</div>
+        <div class="pass-txt"></div><a href="#" class="showLoginForm">ஏற்கனவே உள்ள கணக்கில் நுழைய</a>
+    </div>
+    <div class="wrapper" id="register" style="display: none;">
+        <header>புதிய கணக்கை உருவாக்கு</header>
+        <form id="registerForm" action="#">
+            <div class="field email">
+                <div class="input-area">
+                    <input type="text" placeholder="மின்னஞ்சல்">
+                    <i class="icon fas fa-envelope"></i>
+                    <i class="error error-icon fas fa-exclamation-circle"></i>
+                </div>
+                <div class="error error-txt">மின்னஞ்சல் தேவை</div>
+            </div>
+            <div class="field password">
+                <div class="input-area">
+                    <input type="password" placeholder="கடவுச்சொல்">
+                    <i class="icon-right fa fa-eye" id="togglePassword"></i>
+                    <i class="icon fas fa-lock"></i>
+                    <i class="error error-icon fas fa-exclamation-circle"></i>
+                </div>
+                <div class="error error-txt">கடவுச்சொல் தேவை</div>
+            </div>
+            <div class="field confirm-password">
+                <div class="input-area">
+                    <input type="password" placeholder="கடவுச்சொல்லை உறுதிப்படுத்தவும்">
+                    <i class="icon fas fa-lock"></i>
+                    <i class="error error-icon fas fa-exclamation-circle"></i>
+                </div>
+                <div class="error error-txt">கடவுச்சொல் தேவை</div>
+            </div>
+            <input type="submit" value="கணக்கை உருவாக்கு">
+        </form>
+        <div class="class-or">அல்லது</div>
+        <div class="pass-txt"></div><a href="#" class="showLoginForm">ஏற்கனவே உள்ள கணக்கில் நுழைய</a>
+    </div>
+    <script src="scripts/login.js"></script>
+    <script src="scripts/register.js"></script>
+    <script src="scripts/utils.js"></script>
+
+</body>
+
+</html>

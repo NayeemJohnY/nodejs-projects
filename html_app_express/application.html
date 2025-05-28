@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TNTJ Palacode Subscription & Expenditure</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>
+</head>
+
+<body>
+    <span id='navigationMenu' style="display: none;">&#9776;</span>
+    <div id="sidenav" class="sidenav">
+        <span class="closebtn">&times;</span>
+        <span value="subscription">&#10148;&ensp; சந்தா பதிவு</span>
+        <span value="view_subscription">&#10148;&ensp; சந்தா விவரம்</span>
+        <span value="creditExpense">&#10148;&ensp; வரவு மற்றும் செலவு பதிவு</span>
+        <span value="view_creditExpense">&#10148;&ensp; வரவு மற்றும் செலவு விவரம்</span>
+    </div>
+
+    <div class="wrapper" id="menuitems">
+        <button value="subscription">சந்தா பதிவு</button>
+        <button value="view_subscription">சந்தா விவரம்</button>
+        <button value="creditExpense">வரவு மற்றும் செலவு பதிவு</button>
+        <button value="view_creditExpense">வரவு மற்றும் செலவு விவரம்</button>
+    </div>
+    <!-- To Add Subscription -->
+    <div class="wrapper" id="subscription" style="display: none;">
+        <header>சந்தா பதிவு</header>
+        <form id="subscriptionForm">
+            <div class="field">
+                <div class="input-area">
+                    <input type="date" name="date" id="date" placeholder="தேதி">
+                    <i class="icon fa fa-calendar"></i>
+                </div>
+            </div>
+            <div class="field subscriber">
+                <div class="input-area">
+                    <input type="search" name="subscriber" id="subscriber" placeholder="சந்தாதாரர் பெயர்">
+                    <i class="icon fa fa-user"></i>
+                    <i class="error error-icon fas fa-exclamation-circle"></i>
+                </div>
+                <div class="error error-txt">சந்தாதாரர் பெயர் தேவை</div>
+            </div>
+            <div class="field">
+                <div class="input-area">
+                    <input type="search" name="place" id="place" placeholder="ஊர்">
+                    <i class="icon fa fa-map-marker"></i>
+                </div>
+            </div>
+            <div class="field phone">
+                <div class="input-area">
+                    <input type="tel" name="phone" id="phone" title="Hooray!" placeholder="தொலைபேசி எண்">
+                    <i class="icon fa fa-phone"></i>
+                </div>
+                <div class="error error-txt">சரியான தொலைபேசி எண்ணை பதிவு செய்யவும்</div>
+            </div>
+            <div class="field subscriptionAmount">
+                <div class="input-area">
+                    <input type="number" min="1" name="subscriptionAmount" id="subscriptionAmount" placeholder="சந்தா தொகை">
+                    <i class="icon fas fa-rupee-sign"></i>
+                    <i class="error error-icon fas fa-exclamation-circle"></i>
+                </div>
+                <div class="error error-txt">சந்தா தொகை தேவை</div>
+            </div>
+            <input type="submit" value="சமர்ப்பி">
+        </form>
+        <div id="viewSubscription" style="display:none">
+            <div class="class-or">அல்லது</div>
+            <a href="#" id="showSubscription">
+                பதிவு செய்யப்பட்ட சந்தாவைப் பார்க்க</a>
+        </div>
+    </div>
+    <!-- To Confirm Subscription Add -->
+    <div class="wrapper" id="subscriptionDetails" style="display: none;">
+        <header>சந்தா விவரம்</header>
+        <form id="subsriptionDetailsForm" action="#">
+            <input type="submit" value="உறுதிப்படுத்து">
+        </form>
+        <div class="class-or">அல்லது</div>
+        <a href="#" id="moreSubscription">
+            <i class="icon fa fa-plus-circle fa-lg"></i> மேலும் ஒரு சந்தாவைச் சேர்க்க</a>
+    </div>
+    <!-- To View Subscription -->
+    <div class="wrapper" id="view_subscription" style="display: none;">
+        <header>சந்தா விவரங்கள் பார்க்க</header>
+        <form id="viewSubscriptionDetailsForm" action="#">
+            <div class="field dateinput">
+                <label for="startdate">தொடக்க தேதி</label>
+                <div class="input-area">
+                    <input type="date" name="startdate" id="date" placeholder="தொடக்க தேதி">
+                    <i class="icon fa fa-calendar"></i>
+                </div>
+            </div>
+            <div class="field dateinput">
+                <label for="enddate">கடைசி தேதி</label>
+                <div class="input-area">
+                    <input type="date" name="enddate" id="date" placeholder="கடைசி தேதி">
+                    <i class="icon fa fa-calendar"></i>
+                </div>
+            </div>
+            <input type="submit" value="விவரம் காண்பி">
+        </form>
+    </div>
+    <!-- To Add Credit & Expense -->
+    <div class="wrapper" id="creditExpense" style="display: none;">
+        <header>வரவு மற்றும் செலவு பதிவு</header>
+        <form id="creditExpenseForm">
+            <div class="field">
+                <div class="input-area">
+                    <input type="date" name="date" id="date" placeholder="தேதி">
+                    <i class="icon fa fa-calendar"></i>
+                </div>
+            </div>
+            <div class="field categories">
+                <div class="input-area">
+                    <input list="categories" id="category" placeholder="பிரிவு">
+                    <i class="icon fa fa-info-circle"></i>
+                    <datalist id="categories">
+                        <option data-value="general" value="பொது">
+                        <option data-value="ramzan fasting" value="ரம்ஜான் நோன்பு">
+                        <option data-value="bakrid" value="பக்ரீத்">
+                        <option data-value="blood donation camp" value="இரத்த தான முகாம்">
+                        <option data-value="aashura fasting" value="இரத்த தான">
+                    </datalist>
+                    <i class="error error-icon fas fa-exclamation-circle"></i>
+                </div>
+                <div class="error error-txt">பிரிவை தேர்ந்தெடுக்கவும்</div>
+            </div>
+            <div class="field radio">
+                <div class="input-area">
+                    <label id="type">வகை :</label>
+                    <i class="icon fa fa-info-circle"></i>
+                    <input type="radio" name="ce-type" id="credit" value="வரவு">
+                    <label for="credit">வரவு</label>
+                    <input type="radio" name="ce-type" id="expense" value="செலவு">
+                    <label for="expense">செலவு</label>
+                    <i class="error error-icon fas fa-exclamation-circle"></i>
+                </div>
+                <div class="error error-txt">வகையை தேர்ந்தெடுக்கவும்</div>
+            </div>
+            <div class="field credit-expense-name">
+                <div class="input-area">
+                    <input type="search" name="credit-expense-name" id="credit-expense-name" placeholder="எந்த வகையில் வரவு / செலவு">
+                    <i class="icon fa fa-question-circle"></i>
+                    <i class="error error-icon fas fa-exclamation-circle"></i>
+                </div>
+                <div class="error error-txt">எந்த வகையில் வரவு / செலவு தேவை</div>
+            </div>
+            <div class="field creditExpenseAmount">
+                <div class="input-area">
+                    <input type="number" min="1" name="creditExpenseAmount" id="creditExpenseAmount" placeholder="வரவு / செலவு தொகை">
+                    <i class="icon fas fa-rupee-sign"></i>
+                    <i class="error error-icon fas fa-exclamation-circle"></i>
+                </div>
+                <div class="error error-txt">வரவு / செலவு தொகை தேவை</div>
+            </div>
+            <input type="submit" value="சமர்ப்பி">
+        </form>
+        <div id="viewCreditExpense" style="display:none">
+            <div class="class-or">அல்லது</div>
+            <a href="#" id="showCreditExpense">
+                பதிவு செய்யப்பட்ட வரவு / செலவை பார்க்க</a>
+        </div>
+    </div>
+    <!-- To Confirm Credit & Expense Add -->
+    <div class="wrapper" id="creditExpenseDetails" style="display: none;">
+        <header>வரவு மற்றும் செலவு விவரம்</header>
+        <form id="creditExpenseDetailsForm" action="#">
+            <input type="submit" value="உறுதிப்படுத்து">
+        </form>
+        <div class="class-or">அல்லது</div>
+        <a href="#" id="moreCreditExpenseForm">
+            <i class="icon fa fa-plus-circle fa-lg"></i> மேலும் ஒரு வரவு / செலவை சேர்க்க</a>
+    </div>
+    <!-- To View Credit & Expense -->
+    <div class="wrapper" id="view_creditExpense" style="display: none;">
+        <header>வரவு மற்றும் செலவு விவரங்கள் பார்க்க</header>
+        <form id="viewCreditExpenseDetailsForm" action="#">
+            <div class="field dateinput">
+                <label for="startdate">தொடக்க தேதி</label>
+                <div class="input-area">
+                    <input type="date" name="startdate" id="date" placeholder="தொடக்க தேதி">
+                    <i class="icon fa fa-calendar"></i>
+                </div>
+            </div>
+            <div class="field dateinput">
+                <label for="enddate">கடைசி தேதி</label>
+                <div class="input-area">
+                    <input type="date" name="enddate" id="date" placeholder="கடைசி தேதி">
+                    <i class="icon fa fa-calendar"></i>
+                </div>
+            </div>
+            <input type="submit" value="விவரம் காண்பி">
+        </form>
+    </div>
+</body>
+<script src="../js/application.js"></script>
+<script src="./js/utils.js"></script>
+
+</html>

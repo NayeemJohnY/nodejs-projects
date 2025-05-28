@@ -1,0 +1,15 @@
+{
+  "name": "users-app",
+  "version": "1.0.0",
+  "description": "Users App backed by node js",
+  "main": "restapi.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nayeem John",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^2.0.15",
+    "users-app": "file:"
+  }
+}

@@ -1,0 +1,75 @@
+footer {
+    right: 15px;
+    bottom: 15px;
+    border-top: 2px solid gray;
+    padding-top: 10px;
+    text-align: right;
+    position: fixed;
+    width: 100%;
+}
+
+header a {
+    text-decoration: none;
+    color: black;
+}
+
+.menuitem a {
+    text-decoration: underline;
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 10px;
+    text-align: left;
+}
+
+.menuitem a:hover {
+    background-color: steelblue;
+    border-radius: 25px;
+    color: white;
+}
+
+form {
+    padding: 20px 20px;
+    margin: 20px 20px;
+}
+
+input {
+    border-radius: 5px;
+    padding: 5px;
+    border: 2px solid
+}
+
+button {
+    cursor: pointer;
+    background-color: gray;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+table {
+    border: 2px solid cadetblue;
+    padding: 10px 10px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 15px 1px cadetblue;
+    margin-top: 10px;
+    position: relative;
+    left: 20%;
+    border-spacing: 0px;
+}
+
+td {
+    padding: 8px;
+    text-align: left;
+}
+
+tr:nth-child(odd) {
+    background-color: #f2f2f2f2;
+}
+
+td:last-child {
+    font-weight: bold;
+}
+
+#weatherError {
+    color: red
+}

@@ -1,0 +1,16 @@
+{
+    "name": "lets-chat-app",
+    "version": "1.0.0",
+    "description": "It is chat application backed by node js & websocket",
+    "main": "index.js",
+    "scripts": {
+        "start": "node src/index.js"
+    },
+    "author": "Nayeem John",
+    "license": "ISC",
+    "dependencies": {
+        "express": "^4.17.2",
+        "lets-chat-app": "file:",
+        "socket.io": "^4.4.1"
+    }
+}
